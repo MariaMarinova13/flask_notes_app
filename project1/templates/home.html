@@ -4,14 +4,10 @@
 {% endblock %}
 
 {% block content %}
-<div style="color:white">
-        <div>
-            <h1 class="display-4 font-weight-normal">Notes</h1>
-            <p class="lead font-weight-normal">Start adding your notes.</p>
-            <a class="btn btn-primary" href="{{ url_for('add_note') }}">Get Started</a>
-        </div>
-        <div></div>
-        <div ></div>
-    </div>
+<div id="mydiv">
+    <h1 class="display-4 font-weight-normal">Notes</h1>
+    <h2 class="lead font-weight-normal">Start adding your notes now.</h2>
+    <a href="{{ url_for('add_note') }}"><button class="home">Get Started</button></a>
+</div>
 
 {% endblock %}

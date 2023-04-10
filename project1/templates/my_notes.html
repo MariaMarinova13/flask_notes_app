@@ -1,34 +1,32 @@
 {% extends "base.html" %}
-
 {% block title %}
 My Notes
 {% endblock %}
-
 {% block content%}
 <h1 align="center" id="usernotes">{{ current_user.username }}'s Notes</h1>
 <ul class="list" id="notes">
-  {% for note in user.notes %}
-
-  <li class="list">
-  <form method="post" action="{{ url_for('remove', id=note.id) }}">
-    <button class="closebtn" type="submit" id="deleteNote">&times;</button>
-  </form>
-    <p class="noteid">
-    {{ note.date  }}
-    </p>
-    <p class="notedata">
-    {{ note.data }}
-    </p>
-   {% endfor %}
-
-  </li>
-
+   {% for note in user.notes %}
+   <li class="list">
+      <form method="post" action="{{ url_for('remove', id=note.id) }}">
+         <button class="closebtn" type="submit" id="deleteNote">&times;</button>
+      </form>
+      <form method="post" name="edit" action="{{ url_for('update', id=note.id) }}">
+         <a href="{{ url_for('update', id=note.id) }}">edit</a>
+      </form>
+      <p class="noteid">
+         {{ note.date  }}
+      </p>
+      <p class="notedata">
+         {{ note.data }}
+      </p>
+      {% endfor %}
+   </li>
 </ul>
 <form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
-  <div align="center">
-    <button type="submit" class="btn btn-primary" id="addNote">Add Note</button>
-  </div>
+   <textarea name="note" id="note" class="form-control"></textarea>
+   <br />
+   <div align="center">
+      <button type="submit" id="addNote">Add Note</button>
+   </div>
 </form>
 {% endblock %}

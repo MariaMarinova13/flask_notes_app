@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, StringField, PasswordField
+from wtforms import SubmitField, StringField, PasswordField, TextAreaField
 from wtforms.validators import EqualTo, Length, Email, DataRequired, ValidationError
 from project1.models import User
 
@@ -29,8 +29,9 @@ class LoginForm(FlaskForm):
     submit = SubmitField(label='Sign in')
 
 class NoteForm(FlaskForm):
-    data = StringField(label='Name')
+    data = TextAreaField(label='Name')
     submit = SubmitField(label='Add Note')
 
 class DeleteForm(FlaskForm):
     delete = SubmitField(label='Delete')
+

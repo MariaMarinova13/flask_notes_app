@@ -8,44 +8,39 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename='notes.css') }}">
       <title>
-      {% block title %}
+         {% block title %}
          Home Page
-      {% endblock %}
+         {% endblock %}
       </title>
-
-
    </head>
-
    <body>
-   <div id="gradient">
-   <div class="topnav">
-     <a class="active" href="{{url_for ('home_page')}}">Home</a>
-     <a href="{{url_for ('add_note')}}">My Notes</a>
-       {% if current_user.is_authenticated %}
-        <div class="topnav-right">
-       <a> Welcome, {{ current_user.username }}</a>
-       <a href="{{url_for ('logout_page')}}">Logout </a>
-       </div>
-       {% else %}
-     <div class="topnav-right">
-       <a href="{{url_for ('register_page')}}">Register</a>
-       <a href="{{url_for ('login_page')}}">Login</a>
-     </div>
-       {% endif %}
-   </div>
-   {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert alert-{{category}}">{{message}}
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                </div>
-            {% endfor %}
-        {% endif %}
-   {% endwith %}
-
-   {% block content %}
-
-   {% endblock %}
-   </div>
+      <div id="gradient">
+         <div class="topnav">
+            <a class="active" href="{{url_for ('home_page')}}">Home</a>
+            <a href="{{url_for ('add_note')}}">My Notes</a>
+            {% if current_user.is_authenticated %}
+            <div class="topnav-right">
+               <a> Welcome, {{ current_user.username }}</a>
+               <a href="{{url_for ('logout_page')}}">Logout </a>
+            </div>
+            {% else %}
+            <div class="topnav-right">
+               <a href="{{url_for ('register_page')}}">Register</a>
+               <a href="{{url_for ('login_page')}}">Login</a>
+            </div>
+            {% endif %}
+         </div>
+         {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+         {% for category, message in messages %}
+         <div class="alert alert-{{category}}">{{message}}
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+         </div>
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+         {% block content %}
+         {% endblock %}
+      </div>
    </body>
 </html>

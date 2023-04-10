@@ -1,6 +1,6 @@
 from project1 import app
 from flask import render_template, url_for, redirect, flash, request, jsonify
-from project1.forms import RegisterForm, LoginForm
+from project1.forms import RegisterForm, LoginForm, NoteForm
 from project1.models import User, Note
 from project1 import db
 from flask_login import login_user, logout_user, current_user, login_required
@@ -117,6 +117,16 @@ def remove(id):
     return redirect(url_for('add_note'))
 
 
-
-
-
+@app.route("/update/<int:id>", methods=['GET', 'POST'])
+@login_required
+def update(id):
+    note = Note.query.get_or_404(id)
+    form = NoteForm()
+    if form.validate_on_submit():
+        note.data = form.data.data
+        db.session.add(note)
+        db.session.commit()
+        flash('Your note has been updated!', 'success')
+        return redirect(url_for('add_note'))
+    form.data.data = note.data
+    return render_template('edit.html', form=form)

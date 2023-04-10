@@ -1,3 +1,4 @@
+/* home page button */
 #usernotes {
     color: #142B58;
 
@@ -23,8 +24,6 @@ ul{
 }
 
 #deleteNote {
-
-
     float: right;
     background: grey;
 	color: white;
@@ -34,6 +33,7 @@ ul{
 }
 
 
+/* textarea */
 
 textarea {
   display: block;
@@ -49,21 +49,10 @@ textarea {
   padding: 30px;
 }
 
-.submitbutton {
-  background-color: #56C8F1;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-}
+/* submit btn */
 
 #addNote {
+
   background-color: #5288DE;
   border: none;
   color: white;
@@ -75,33 +64,34 @@ textarea {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 12px;
-
 }
 
+/* notes */
 p.noteid {
-
 
     font-weight: bold;
     text-decoration: underline;
     font-family: 'Kalam', cursive;
     font-size: 1.05rem;
-
-
+    margin-bottom:2px;
 }
+
 
 p.notedata {
 
     color: #142B58;
     font-weight: bold;
+    margin-top: 0px;
     text-align: center;
     position: left:0px; top:0px;
     font-family: 'Kalam', cursive;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
 
 
 }
 
 li{
+word-wrap: break-word;
 position:relative;
 margin: 25px;
 width: 250px;
@@ -121,4 +111,22 @@ border:1px solid #E8E8E8;
 border-top:0px solid #fdfd86;
 box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
 transform:rotate(-3deg);
+}
+
+/* edit page btn */
+#btn_edit{
+
+  background-color: #5288DE;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 200px;
+
 }

@@ -1,37 +1,28 @@
 {% extends 'base.html' %}
-
 {% block title %}
 Login Page
 {% endblock %}
-
 {% block content %}
 <body>
-<div class="container">
-<form method="POST">
-    {{form.hidden_tag() }}
-    <h1>
-        Please Sign in
-    </h1>
-    <hr>
-    {{ form.username.label() }}
-    {{ form.username(class="form-control", placeholder='User Name') }}
-    {{ form.password.label() }}
-    {{ form.password(class="form-control", placeholder='Password') }}
-    <hr>
-    <div>
-      <h4> Do not have an account?</h4>
-        <a class="button" href="{{url_for('register_page')}}">Register</a>
-    </div>
-    <hr>
-    {{form.submit(class="registerbtn") }}
-
-
-
-
-
-</form>
-
-
-</div>
+   <div class="container">
+      <form method="POST">
+         {{form.hidden_tag() }}
+         <h1>
+            Please Sign in
+         </h1>
+         <hr>
+         {{ form.username.label() }}
+         {{ form.username(class="form-control", placeholder='User Name') }}
+         {{ form.password.label() }}
+         {{ form.password(class="form-control", placeholder='Password') }}
+         <hr>
+         <div>
+            <h4> Do not have an account?</h4>
+            <a class="loginbtn" href="{{url_for('register_page')}}">Register</a>
+         </div>
+         <hr>
+         {{form.submit(class="registerbtn") }}
+      </form>
+   </div>
 </body>
 {% endblock %}

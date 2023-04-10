@@ -1,14 +1,13 @@
-
+/* Body styling */
 body {
     background-color: #bedad4;
     background-image: linear-gradient(90deg, #bedad4 0%, #edcbc5 100%);
-
     color: white
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+/* Navbar */
 .topnav {
   overflow: hidden;
   background-color: #7D9CBD;
@@ -42,6 +41,7 @@ body {
   float: right;
 }
 
+/* messages */
 .alert-danger {
   padding: 10px;
   border-color: darkred;
@@ -75,6 +75,7 @@ body {
   text-align: center
 }
 
+/* notes */
 .closebtn {
   margin-left: 15px;
   color: grey;
@@ -88,4 +89,31 @@ body {
 
 .closebtn:hover {
   color: black;
+}
+
+/* home page */
+#mydiv{
+
+    background-color: aliceblue;
+    padding:25px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.home{
+  background-color: #5288DE;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+  border-radius: 12px;
+  text-decoration:none;
+
 }
